@@ -15,6 +15,13 @@ class Tweet(CommonModel):
         related_name="tweets",
     )
 
+    def countOflike(tweet):
+        count = tweet.likes.count()
+        if count == 0:
+            return "No likes"
+        else:
+            return count
+
     def __str__(self):
         return self.payload
 

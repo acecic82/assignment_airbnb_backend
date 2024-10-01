@@ -15,7 +15,7 @@ class Tweet(CommonModel):
         related_name="tweets",
     )
 
-    def countOflike(tweet):
+    def countOfLike(tweet):
         count = tweet.likes.count()
         if count == 0:
             return "No likes"

@@ -1,9 +1,8 @@
 from rest_framework import serializers
+from tweets.models import Tweet
 
 
-class TweetSerializer(serializers.Serializer):
-    pk = serializers.IntegerField()
-    payload = serializers.CharField(required=True)
-    user = serializers.CharField()
-    created_at = serializers.DateTimeField()
-    updated_at = serializers.DateTimeField()
+class TweetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tweet
+        fields = "__all__"
